@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kursy walut</title>
+        <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="top">
+    <h1>Aktualny kurs walut według NBP</h1>
+</div>
+    <p id="import">Wchodząc na strone pobrałeś aktualny kurs walut.</p>
+   <div class="navigation">
+    <a href="{% url 'show_currency_rates' %}" id="raport">Zobacz aktualne zestawienie</a>
+    <a href="{% url 'home_page' %}">Wróć do strony głównej</a>
+    </div>
+
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Aktualny kurs walut</title>
+    <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var timeElement = document.getElementById("time");
+            var currentDate = new Date().toLocaleDateString();
+            timeElement.textContent = "Aktualna data: " + currentDate;
+        });
+    </script>
+</head>
+<body>
+<div class="top">
+    <h1>Dzisiejszy kurs walut</h1>
+</div>
+<p id="time"></p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Waluta</th>
+                <th>Kurs</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rate in currency_rates %}
+            <tr>
+                <td>{{ rate.currency_code }}</td>
+                <td>{{ rate.exchange_rate }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+<div id="back">
+    <a href="{% url 'home_page' %}">Wróć do strony głównej</a>
+</div>
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+
+</body>
+</html>

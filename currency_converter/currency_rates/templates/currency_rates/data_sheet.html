@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Kursy walut</title>
+    <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div class="top">
+    <h1>Kursy walut</h1>
+</div>
+    <form method="POST" action="{% url 'fetch_currency_data' %}">
+        {% csrf_token %}
+        <label for="start_date">Data początkowa:</label>
+        <input type="date" id="start_date" name="start_date" required>
+        <label for="end_date">Data końcowa:</label>
+        <input type="date" id="end_date" name="end_date" required>
+        <label for="currency">Waluta:</label>
+        <select id="currency" name="currency">
+            <option value="all">Wszystkie waluty</option>
+            {% for currency_rate in currency_rates %}
+                <option value="{{ currency_rate.currency_code }}">{{ currency_rate.currency_code }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Generuj zestawienie</button>
+    </form>
+<div id="fromto">
+    {% if filtered_data %}
+        <table class="table">
+            <tr>
+                <th>Waluta</th>
+                <th>Kurs</th>
+                <th>Data</th>
+            </tr>
+            {% for currency_rate in filtered_data %}
+                <tr>
+                    <td>{{ currency_rate.currency_code }}</td>
+                    <td>{{ currency_rate.exchange_rate }}</td>
+                    <td>{{ currency_rate.date }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <button id="show_chart_button" onclick="showChart()">Pokaż wykres</button>
+    {% else %}
+        <p>Brak dostępnych danych</p>
+    {% endif %}
+</div>
+<div id="back">
+    <a href="{% url 'home_page' %}">Wróć do strony głównej</a>
+</div>
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+<script>
+    function showChart() {
+        var currencyData = [];
+        var rows = document.getElementsByClassName("table")[0].getElementsByTagName("tr");
+        for (var i = 1; i < rows.length; i++) {
+            var currencyCode = rows[i].getElementsByTagName("td")[0].innerText;
+            var exchangeRate = parseFloat(rows[i].getElementsByTagName("td")[1].innerText);
+            var date = rows[i].getElementsByTagName("td")[2].innerText;
+            currencyData.push({ currencyCode: currencyCode, exchangeRate: exchangeRate, date: date });
+        }
+
+        var chartWindow = window.open("", "Wykres walut", "width=800,height=600");
+        chartWindow.document.write("<html><head><title>Wykres walut</title></head><body>");
+        chartWindow.document.write("<canvas id='currencyChart'></canvas>");
+        chartWindow.document.write("<scr" + "ipt src='https://cdn.jsdelivr.net/npm/chart.js'></scr" + "ipt>");
+        chartWindow.document.write("<scr" + "ipt>");
+        chartWindow.document.write("var ctx = document.getElementById('currencyChart').getContext('2d');");
+        chartWindow.document.write("var labels = " + JSON.stringify(currencyData.map(data => data.date)) + ";");
+        chartWindow.document.write("var exchangeRates = " + JSON.stringify(currencyData.map(data => data.exchangeRate)) + ";");
+        chartWindow.document.write("var chart = new Chart(ctx, { type: 'line', data: { labels: labels, datasets: [{ label: 'Kurs waluty', data: exchangeRates }] } });");
+        chartWindow.document.write("</scr" + "ipt></body></html>");
+    }
+</script>
+</body>
+</html>
