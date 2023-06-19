@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from .models import CurrencyRate
 from .utils import fetch_currency_rates, fetch_time_currency_rates
-
+from .models import Country
+from django.views.generic import DetailView
+from django.shortcuts import get_object_or_404
 
 def fetch_and_save_currency_rates(request):
     data = fetch_currency_rates()
@@ -29,7 +31,7 @@ def fetch_currency_data(request):
     elif request.method == 'POST':
         start_date = request.POST.get('start_date')
         end_date = request.POST.get('end_date')
-        currency = request.POST.get('currency')
+        currencyx = request.POST.get('currency')
 
         data = fetch_time_currency_rates(start_date, end_date)
         filtered_data = []
@@ -37,7 +39,7 @@ def fetch_currency_data(request):
         if data:
             for currency_data in data:
                 for rate in currency_data['rates']:
-                    if currency == 'all' or rate.get('code') == currency:
+                    if currencyx == 'all' or rate.get('code') == currencyx:
                         currency_rate = CurrencyRate(
                             currency_code=rate.get('code'),
                             exchange_rate=rate.get('mid'),
@@ -56,3 +58,40 @@ def fetch_currency(request):
 
 def home_page(request):
     return TemplateResponse(request, 'currency_rates/homepage.html')
+
+def country_list(request):
+    countries = Country.objects.values('v_country')
+    return render(request, 'currency_rates/country_list.html', {'countries': countries})
+
+def currency_(request):
+    return TemplateResponse(request, 'currency_rates/currency.html')
+
+
+def info(request):
+    countries = Country.objects.all()
+    return render(request, 'currency_rates/info_country.html', {'countries': countries})
+
+
+class CountryDetailView(DetailView):
+    model = Country
+    template_name = 'currency_rates/info_country.html'
+    context_object_name = 'country'
+
+    def get_object(self, queryset=None):
+        country_name = self.kwargs.get('country_name')
+        country = get_object_or_404(Country, v_country=country_name)
+        return country
+def maps(request):
+    return TemplateResponse(request, 'currency_rates/maps.html')
+
+
+def search_country(request):
+    if 'country_name' in request.GET:
+        country_name = request.GET['country_name']
+        try:
+            country = Country.objects.get(v_country=country_name)
+            return redirect('country_detail', country_name=country.v_country)
+        except Country.DoesNotExist:
+            message = "Kraj o nazwie {} nie istnieje lub nie ma go w bazie danych.".format(country_name)
+            return render(request, 'homepage.html', {'message': message})
+    return redirect('home_page')

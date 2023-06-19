@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista krajów</title>
+    <link href="{% static 'currency_rates/css/country_list.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
+</div>
+<div class="top">
+    <h1>Lista krajów</h1>
+</div>
+
+<table class="list">
+    <thead>
+        <tr>
+            <th>Numer</th>
+            <th>Kraj</th>
+            <th>Flaga</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for country in countries %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td ><a href="{% url 'country_detail' country_name=country.v_country %}">{{ country.v_country }}</a></td>
+            <td class="flag_image"><img src="{% static 'flags/'|add:country.v_country|add:'.webp' %}" alt="{{ country.v_country }} flag" ></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+</body>
+</html>

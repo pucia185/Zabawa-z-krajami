@@ -2,20 +2,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Kursy walut</title>
-        <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
+    <title>W skrócie o pewnych  krajach świata</title>
+    <link href="{% static 'currency_rates/css/homepage.css' %}" rel="stylesheet" />
 </head>
 <body>
-<div class="top">
-    <h1>Na tej stronie możesz zarządzać kursami walut</h1>
-    </div>
-    <p>Wybierz co chcesz zrobić:</p>
-    <div class="points">
-        <a href="{% url 'fetch_and_save_currency_rates' %}">Kliknij, by pobrać aktualny kurs</a>
-        <a href="{% url 'show_currency_rates' %}">Zobacz aktualne zestawienie</a>
-        <a href="{% url 'fetch_currency_data' %}">Przygotuj zestawienie archiwalnych kursow wybranej waluty</a>
-    </div>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
 
+</div>
+
+<div class="top">
+    <h1>Wybrane informacje o wybranych krajach</h1>
+</div>
+
+<div class="search">
+    <p> Sprawdź, czy mamy informacje o kraju, który szukasz.</p>
+
+ <form  action="{% url 'search_country' %}" method="GET" class="search-form">
+    <label>
+        <input type="text" name="country_name" placeholder="Wyszukaj kraj...">
+    </label>
+    <button type="submit">Szukaj</button>
+</form>
+</div>
+
+<div class="something">
+   <p> Witaj na mojej aplikacji, Twoim niezawodnym przewodniku po krajach świata!?<br>
+ Czy marzysz o podróżach? Szukasz inspiracji? Moja aplikacja to nie jest idealne miejsce dla Ciebie, ale skoro już tu
+ trafiłeś, to zostań, coś jednak do zaoferowania mam ;)
+ Bez względu na to, czy jesteś podróżnikiem, studentem, badaczem czy po prostu ciekawym świata entuzjastą, gwarantuje,
+ że nie znajdziesz tu wszystkiego czego szukasz.<br>
+ Moja aplikacja jest stale aktualizowana, więc może kiedyś przestanie być waszym rozczarowaniem. Niezależnie od tego,
+ czy planujesz odwiedzić Europę, Azję, Amerykę Północną czy dowolny inny kontynent, z moją aplikacją
+ sprawdzisz podstawy. W jakim języku się porozumieć, jaką walutą zapłacisz, gdy poszerzymy aplikację o adresy
+ kosulatów, wtedy zostanie tylko umieszczenie informacji odnośnie stosunku władzy do alkoholu i jego cen, to chociaż studenci
+ będą zadowoleni.<br>
+    Zapraszam cieplutko do korzystania z mojej aplikacji!<br>
+    Życze udanej podróży!
+</p>
+
+</div>
 <div class="footer">
     <p> Strona zrobiona przez Natalię Pucek.</p>
 </div>

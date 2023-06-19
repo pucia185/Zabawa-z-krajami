@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Kursy walut</title>
+        <link href="{% static 'currency_rates/css/currency_.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
+</div>
+
+<div class="top">
+    <h1>Na tej stronie możesz zarządzać kursami walut</h1>
+    </div>
+
+    <p>Wybierz co chcesz zrobić:</p>
+
+<div id="as">
+<table>
+    <tr>
+        <th> </th>
+        <th> </th>
+    </tr>
+    <tr>
+        <td>
+            <a href="{% url 'show_currency_rates' %}">Zobacz aktualne zestawienie</a>
+        </td>
+
+        <td>
+            <a href="{% url 'fetch_currency_data' %}">Przygotuj zestawienie archiwalnych kursow wybranej waluty</a>
+        </td>
+    </tr>
+</table>
+</div>
+
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły kraju</title>
+    <link href="{% static 'currency_rates/css/info_country.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
+</div>
+<div class="top">
+    <h1>Szczegóły kraju</h1>
+</div>
+<table class="table">
+    <tr>
+        <th>Nazwa kraju</th>
+        <th>Stolica</th>
+        <th>Język</th>
+        <th>Główna religia</th>
+        <th>Kod kraju</th>
+        <th>Waluta</th>
+    </tr>
+    <tr>
+        <td>{{ country.v_country }}</td>
+        <td>{{ country.v_capitol }}</td>
+        <td>{{ country.v_language }}</td>
+        <td>{{ country.v_main_religion }}</td>
+        <td>{{ country.v_code }}</td>
+        <td>{{ country.v_currency }}</td>
+    </tr>
+</table>
+
+<div class="back">
+    <a href="{% url 'country_list' %}">Wróć do listy krajów</a>
+</div>
+
+<div class="footer">
+    <p> Strona zrobiona przez Natalię Pucek.</p>
+</div>
+</body>
+</html>

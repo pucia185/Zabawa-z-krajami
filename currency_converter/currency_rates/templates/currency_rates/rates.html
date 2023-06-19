@@ -4,8 +4,8 @@
 <head>
 
     <title>Aktualny kurs walut</title>
-    <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
-     <script>
+    <link href="{% static 'currency_rates/css/rates.css' %}" rel="stylesheet" />
+    <script>
         document.addEventListener("DOMContentLoaded", function() {
             var timeElement = document.getElementById("time");
             var currentDate = new Date().toLocaleDateString();
@@ -14,6 +14,12 @@
     </script>
 </head>
 <body>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
+</div>
 <div class="top">
     <h1>Dzisiejszy kurs walut</h1>
 </div>
@@ -35,9 +41,7 @@
         </tbody>
     </table>
 
-<div id="back">
-    <a href="{% url 'home_page' %}">Wróć do strony głównej</a>
-</div>
+
 <div class="footer">
     <p> Strona zrobiona przez Natalię Pucek.</p>
 </div>

@@ -4,7 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e7a83a-d4f3-4cce-8e4f-1becfc9c844c" name="Changes" comment="" />
+    <list default="true" id="82e7a83a-d4f3-4cce-8e4f-1becfc9c844c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/country_list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/currency_.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/data_sheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/homepage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/info_country.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/maps.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/rates.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/country_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/currency.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/info_country.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/maps.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_converter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_converter/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/currency_rates.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/data_sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/data_sheet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/fetch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/homepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/rates.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/rates.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +35,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -32,7 +54,7 @@
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pucia/PycharmProjects/backend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pucia/Repozytoria/projekt&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -62,10 +84,36 @@
       <workItem from="1685105704831" duration="3258000" />
       <workItem from="1685179229502" duration="11048000" />
       <workItem from="1685191625529" duration="145000" />
+      <workItem from="1685192346399" duration="18000" />
+      <workItem from="1685374146047" duration="821000" />
+      <workItem from="1685776384056" duration="961000" />
+      <workItem from="1685797814958" duration="69000" />
+      <workItem from="1685811194057" duration="109000" />
+      <workItem from="1685862478353" duration="8113000" />
+      <workItem from="1686981649714" duration="1673000" />
+      <workItem from="1686988938177" duration="13605000" />
+      <workItem from="1687004972261" duration="4008000" />
+      <workItem from="1687069929332" duration="2138000" />
+      <workItem from="1687072111141" duration="1537000" />
+      <workItem from="1687073689306" duration="1921000" />
+      <workItem from="1687076127803" duration="3209000" />
+      <workItem from="1687079406660" duration="3213000" />
+      <workItem from="1687082677349" duration="1246000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

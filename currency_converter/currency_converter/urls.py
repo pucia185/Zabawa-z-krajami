@@ -16,12 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from currency_rates.views import fetch_and_save_currency_rates, show_currency_rates, fetch_currency_data, home_page
+from currency_rates.views import fetch_and_save_currency_rates, show_currency_rates, fetch_currency_data, home_page, country_list, currency_, info, maps, CountryDetailView, search_country
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home_page'),
-    path('fetch/', fetch_and_save_currency_rates, name='fetch_and_save_currency_rates'),  # Update the name here
+    path('fetch/', fetch_and_save_currency_rates, name='fetch_and_save_currency_rates'),
     path('rates/', show_currency_rates, name='show_currency_rates'),
     path('data_sheet/', fetch_currency_data, name='fetch_currency_data'),
+    path('countries/', country_list, name='country_list'),
+    path('cureency/', currency_, name='currency_'),
+    path('info/', info, name='info'),
+    path('country/<str:country_name>/', CountryDetailView.as_view(), name='country_detail'),
+    path('maps/', maps, name='maps'),
+    path('search-country/', search_country, name='search_country'),
 ]

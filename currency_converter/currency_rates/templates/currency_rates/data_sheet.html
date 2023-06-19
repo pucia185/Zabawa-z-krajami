@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Kursy walut</title>
-    <link href="{% static 'currency_rates/css/currency_rates.css' %}" rel="stylesheet" />
+    <link href="{% static 'currency_rates/css/data_sheet.css' %}" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+<div class="navigation">
+    <a href="{% url 'home_page' %}"> Strona główna </a>
+    <a href="{% url 'country_list' %}">Kraje</a>
+    <a href="{% url 'currency_' %}">Waluty</a>
+    <a href="{% url 'maps' %}">Mapy</a>
+</div>
 <div class="top">
     <h1>Kursy walut</h1>
 </div>
     <form method="POST" action="{% url 'fetch_currency_data' %}">
         {% csrf_token %}
         <label for="start_date">Data początkowa:</label>
-        <input type="date" id="start_date" name="start_date" required>
+        <input type="date" id="start_date" name="start_date"required max="{{ today }}">
         <label for="end_date">Data końcowa:</label>
-        <input type="date" id="end_date" name="end_date" required>
+        <input type="date" id="end_date" name="end_date" required max="{{ today }}">
         <label for="currency">Waluta:</label>
         <select id="currency" name="currency">
             <option value="all">Wszystkie waluty</option>
@@ -47,9 +53,7 @@
         <p>Brak dostępnych danych</p>
     {% endif %}
 </div>
-<div id="back">
-    <a href="{% url 'home_page' %}">Wróć do strony głównej</a>
-</div>
+
 <div class="footer">
     <p> Strona zrobiona przez Natalię Pucek.</p>
 </div>
@@ -75,6 +79,12 @@
         chartWindow.document.write("var chart = new Chart(ctx, { type: 'line', data: { labels: labels, datasets: [{ label: 'Kurs waluty', data: exchangeRates }] } });");
         chartWindow.document.write("</scr" + "ipt></body></html>");
     }
+    window.addEventListener('DOMContentLoaded', function() {
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('end_date').setAttribute('max', today);
+        var weekendsAndHolidaysWarning = "Mogą zostać pominięte dni, gdy NBP nie ma notowań (soboty, niedziele, święta)!";
+        alert(weekendsAndHolidaysWarning);
+    });
 </script>
 </body>
 </html>
