@@ -6,6 +6,8 @@ from .models import Country
 from django.views.generic import DetailView
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
+from django.db.models import Q
+
 
 def fetch_and_save_currency_rates(request):
     data = fetch_currency_rates()
@@ -90,7 +92,7 @@ def search_country(request):
     if 'country_name' in request.GET:
         country_name = request.GET['country_name']
         try:
-            country = Country.objects.get(v_country=country_name)
+            country = Country.objects.get(Q(v_country__iexact=country_name))
             return redirect('country_detail', country_name=country.v_country)
         except ObjectDoesNotExist:
             message = "Kraj o nazwie {} nie istnieje lub nie ma go w bazie danych.".format(country_name)
