@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82e7a83a-d4f3-4cce-8e4f-1becfc9c844c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/country_list.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/currency_.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/data_sheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/homepage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/info_country.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/maps.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/rates.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/country_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/currency.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/info_country.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/maps.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_converter/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_converter/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/currency_rates.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/data_sheet.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/data_sheet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/fetch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/static/currency_rates/css/homepage.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/rates.html" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/templates/currency_rates/rates.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/currency_converter/currency_rates/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/currency_rates/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/currency_converter/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/currency_converter/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QHkDqC7HD4fFESck5aPpHgpYsb" />
   <component name="ProjectViewState">
@@ -99,6 +85,7 @@
       <workItem from="1687076127803" duration="3209000" />
       <workItem from="1687079406660" duration="3213000" />
       <workItem from="1687082677349" duration="1246000" />
+      <workItem from="1687514265758" duration="1725000" />
     </task>
     <servers />
   </component>
