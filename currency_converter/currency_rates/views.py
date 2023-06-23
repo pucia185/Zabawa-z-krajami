@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
 from .models import CurrencyRate
 from .utils import fetch_currency_rates, fetch_time_currency_rates
-from .models import Country
+from .models import Country, Map
 from django.views.generic import DetailView
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
@@ -85,7 +85,8 @@ class CountryDetailView(DetailView):
         country = get_object_or_404(Country, v_country=country_name)
         return country
 def maps(request):
-    return TemplateResponse(request, 'currency_rates/maps.html')
+    countries = Map.objects.all()
+    return render(request, 'currency_rates/maps.html', {'countries': countries})
 
 
 def search_country(request):
