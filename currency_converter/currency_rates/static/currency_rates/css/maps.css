@@ -45,3 +45,7 @@ body {
     font-style: italic;
 }
 
+.map_image{
+  width: 1200px;
+  height: 800px;
+}
